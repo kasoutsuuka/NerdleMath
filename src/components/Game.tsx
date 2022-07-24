@@ -18,7 +18,7 @@ const Game: React.FC<{
   setShowRules: SetState<boolean>
   setScoreArray: SetState<number[][]>
 }> = ({ setOpen, setShowRules, setScoreArray }) => {
-  const [answers, setAnswers] = useState<string[]>(["1+2+3=6"])
+  const [answers, setAnswers] = useState<string[]>(["1+3-4=0"])
   const [difficultyConfig, setDifficultyConfig] = useState<DifficultyConfig[]>([
     { name: "", color: "", ROWS: 6 },
   ])
