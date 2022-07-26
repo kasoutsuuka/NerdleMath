@@ -340,7 +340,7 @@ const Game: React.FC<{
                   // buttonConfig.reset ? "" : "hidden"
                 } px-6 py-4 font-black text-white bg-red-500`}
               >
-                Reset 💀
+                リセット 💀
               </button>
               <button
                 onClick={() => {
@@ -351,7 +351,7 @@ const Game: React.FC<{
                 }}
                 className="px-6 py-4 font-black text-white bg-blue-500"
               >
-                New ✨
+                新ゲーム ✨
               </button>
               <button
                 onClick={() => {
@@ -359,7 +359,7 @@ const Game: React.FC<{
                 }}
                 className="px-6 py-4 font-black text-white bg-pink-500"
               >
-                Modal 🎁
+                ルール 📖
               </button>
               <button
                 onClick={() => {
