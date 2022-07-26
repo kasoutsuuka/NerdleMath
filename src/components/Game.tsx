@@ -18,7 +18,7 @@ const Game: React.FC<{
   setShowRules: SetState<boolean>
   setScoreArray: SetState<number[][]>
 }> = ({ setOpen, setShowRules, setScoreArray }) => {
-  const [answers, setAnswers] = useState<string[]>(["1+3-4=0"])
+  const [answers, setAnswers] = useState<string[]>(["1+2+3=6"])
   const [difficultyConfig, setDifficultyConfig] = useState<DifficultyConfig[]>([
     { name: "", color: "", ROWS: 6 },
   ])
@@ -72,7 +72,7 @@ const Game: React.FC<{
 
   // Value of the Head
   const [headValue, setHeadValue] = useState({
-    value: "[playing...]",
+    value: "[ゲーム中...]",
     color: "text-green-500",
   })
 
@@ -115,7 +115,7 @@ const Game: React.FC<{
     }
     let col = GameMatrix[guessCount].findIndex(condition)
 
-    if (value === "Delete 🗑") {
+    if (value === "消し 🗑") {
       value = ""
       condition = (col: GameSquare) => {
         return col.value !== ""
@@ -156,7 +156,7 @@ const Game: React.FC<{
     if (isFilled) {
       // Evaluate Answer
       if (!checkIfValidEquation(answer)) {
-        setHeadValue({ value: "[Invalid Equation]", color: "text-red-500" })
+        setHeadValue({ value: "[計算式は間違ってます]", color: "text-red-500" })
       } else {
         const newMatrix = [...GameMatrix]
         for (let i = 0; i < COLS; i++) {
@@ -170,12 +170,12 @@ const Game: React.FC<{
               newMatrix[guessCount][i] = {
                 // Matches if any char in answerEquation
                 value: answer[i],
-                state: "partially-correct",
+                state: "ちょっと違う",
               }
             } else {
               newMatrix[guessCount][i] = {
                 value: answer[i],
-                state: "incorrect",
+                state: "違います",
               }
             }
             return newMatrix
@@ -183,7 +183,7 @@ const Game: React.FC<{
         }
         if (guessCount !== ROWS) setGuessCount((prev) => prev + 1)
 
-        setHeadValue({ value: "[playing...]", color: "text-green-500" })
+        setHeadValue({ value: "[ゲーム中...]", color: "text-green-500" })
       }
     }
   }
@@ -222,7 +222,7 @@ const Game: React.FC<{
       // Check all the squares in row [guessCount - 1] are have state = "correct"
       guessCount > 0 &&
       GameMatrix[guessCount - 1].filter((col) => {
-        return col.state === "correct"
+        return col.state === "正解"
       }).length === COLS
     ) {
       if (!isCheatUsed) {
@@ -233,8 +233,8 @@ const Game: React.FC<{
           let scoreArray: number[][] = GameMatrix.map((row, idx) => {
             return row.map((col) => {
               if (col.state === "default") return -1
-              if (col.state === "correct") return 2
-              if (col.state === "incorrect") return 0
+              if (col.state === "正解") return 2
+              if (col.state === "違います") return 0
               else return 1
             })
           })
@@ -248,7 +248,7 @@ const Game: React.FC<{
       }
       setGuessCount(-1) // disable all the squares
     } else if (guessCount == ROWS) {
-      setHeadValue({ value: "[Lost...]", color: "text-red-500" })
+      setHeadValue({ value: "[ゲームオーバー]", color: "text-red-500" })
       setGuessCount(-1) // disable all the squares
     }
   }, [guessCount])
@@ -258,8 +258,8 @@ const Game: React.FC<{
     let isValid = checkIfValidEquation(answerEquation)
 
     if (!isValid) {
-      setHeadValue({ value: "[Invalid Equation...]", color: "text-red-500" })
-    } else setHeadValue({ value: "[playing...]", color: "text-green-500" })
+      setHeadValue({ value: "[計算式は間違ってます]", color: "text-red-500" })
+    } else setHeadValue({ value: "[ゲーム中...]", color: "text-green-500" })
   }, [answerEquation])
 
   // NewMatrix if AnswerEquation or ROWS changes
@@ -331,7 +331,7 @@ const Game: React.FC<{
                   setGuessCount(0)
                   if (!isCheatUsed)
                     setHeadValue({
-                      value: "[playing...]",
+                      value: "[ゲーム中...]",
                       color: "text-green-500",
                     })
                 }}
@@ -437,7 +437,7 @@ const Game: React.FC<{
                 className="w-24 h-10 font-black text-white bg-slate-800 "
                 onClick={handleButtonInput}
               >
-                消す 🗑
+                消し 🗑
               </button>
             </div>
           </div>
@@ -485,10 +485,10 @@ const CustomInput: React.FC<CustomInputProps> = ({
 
   const color = (state: string): string => {
     let states: Record<string, string> = {
-      correct: "bg-green-500",
-      incorrect: "bg-black text-white",
+      正解: "bg-green-500",
+      違います: "bg-black text-white",
       empty: "bg-yellow-200",
-      "partially-correct": "bg-yellow-400",
+      "ちょっと違う": "bg-yellow-400",
       default: "bg-gray-200",
     }
     return states[state] || "bg-black text-white"
