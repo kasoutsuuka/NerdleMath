@@ -23,9 +23,9 @@ export const Rules: React.FC<RulesType> = ({ open }) => {
             />
           </a>
         </button>
-        How to Play Nerdle
+        Sonoko.study
       </span>
-      <p className="font-bold text-center text-md">RULES</p>
+      <p className="font-bold text-center text-md">ルール</p>
       <ul className="text-xs list-disc">
         <li>Each guess is a calculation</li>
         <li>You can use 0 1 2 3 4 5 6 7 8 9 + - * / or =.</li>
