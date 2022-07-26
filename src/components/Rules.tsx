@@ -29,20 +29,19 @@ export const Rules: React.FC<RulesType> = ({ open }) => {
       <ul className="text-xs list-disc">
         <li>正しい式を入力してください</li>
         <li>入力可能なのは 0 1 2 3 4 5 6 7 8 9 + - * / or =.</li>
-        <li>計算式は BEDMAS</li>
         <li>
-          We follow{" "}
+          計算式は{" "}
           <a
             className="font-bold text-green-500 underline"
-            href="https://www.mathsisfun.com/operation-order-bodmas.html"
+            href="https://www.jica.go.jp/jica-ri/IFIC_and_JBICI-Studies/jica-ri/publication/archives/jica/kenkyu/95_22/04_03.html" target="_blank"
           >
             BODMAS
           </a>
           .
         </li>
         <li>
-          Order of answer matters.
-          <br /> 🟩=数字も場所も正解 </b> 🟨=数字は正しいが場所は違う </b> ⬛=数字も場所も違う
+          色違いの説明
+          <br /> 🟩=数字も場所も正解 <br /> 🟨=数字は正しいが場所は違う <br /> ⬛=数字も場所も違う
         </li>
       </ul>
       <div className="flex flex-col gap-2">
