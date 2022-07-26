@@ -27,9 +27,9 @@ export const Rules: React.FC<RulesType> = ({ open }) => {
       </span>
       <p className="font-bold text-center text-md">ルール</p>
       <ul className="text-xs list-disc">
-        <li>Each guess is a calculation</li>
-        <li>You can use 0 1 2 3 4 5 6 7 8 9 + - * / or =.</li>
-        <li>Calculations are done with BEDMAS</li>
+        <li>正しい式を入力してください</li>
+        <li>入力可能なのは 0 1 2 3 4 5 6 7 8 9 + - * / or =.</li>
+        <li>計算式は BEDMAS</li>
         <li>
           We follow{" "}
           <a
