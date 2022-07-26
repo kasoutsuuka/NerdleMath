@@ -42,7 +42,7 @@ export const Rules: React.FC<RulesType> = ({ open }) => {
         </li>
         <li>
           Order of answer matters.
-          <br /> 10+20=30 ✅ <b>but,</b> 20+10=30 ❌{" "}
+          <br /> 🟩=数字も場所も正解 </b> 🟨=数字は正しいが場所は違う </b> ⬛=数字も場所も違う
         </li>
       </ul>
       <div className="flex flex-col gap-2">
@@ -58,7 +58,7 @@ export const Rules: React.FC<RulesType> = ({ open }) => {
           {ColoredSquare({ value: "0" })}
         </span>
         <p className="text-xs font-bold text-center">
-          1 is in it's correct spot
+          1 は正解
         </p>
       </div>
       <div className="flex flex-col gap-2">
@@ -74,7 +74,7 @@ export const Rules: React.FC<RulesType> = ({ open }) => {
           {ColoredSquare({ value: "0" })}
         </span>
         <p className="text-xs font-bold text-center">
-          2 is in the solution but in the wrong spot
+          2 は場所違い
         </p>
       </div>
       <div className="flex flex-col gap-2">
@@ -90,12 +90,13 @@ export const Rules: React.FC<RulesType> = ({ open }) => {
           {ColoredSquare({ value: "0" })}
         </span>
         <p className="text-xs font-bold text-center">
-          * doesn't exists in the solution
+          * は正解には入らない
         </p>
       </div>
       <div className="text-xs leading-[16px] text-center">
-        If your answer has two 2s and your input has one,
-        <br /> you will only get 1 yellow square
+        正解は複数の数字ある場合は,
+        <br /> 黄色表示されます
+      　<br /> がんばってね！
       </div>
     </div>
   )
