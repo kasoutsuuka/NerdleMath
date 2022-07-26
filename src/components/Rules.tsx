@@ -14,21 +14,13 @@ export const Rules: React.FC<RulesType> = ({ open }) => {
       } px-10 py-6 bg-gray-50 rounded-md shadow-md transition-all duration-500 ease-in-out transform flex flex-col gap-4 text-gray-700`}
     >
       <span className="flex items-center justify-center gap-4 text-2xl font-black">
-        <button>
-          <a href="https://rebrand.ly/nerdle-translate">
-            <img
-              src="https://ik.imagekit.io/rezza/translate_IilSwbtdm.png?ik-sdk-version=javascript-1.4.3"
-              width={30}
-              alt="Translate"
-            />
-          </a>
-        </button>
+        
         Sonoko.study
       </span>
       <p className="font-bold text-center text-md">ルール</p>
       <ul className="text-xs list-disc">
         <li>正しい式を入力してください</li>
-        <li>入力可能なのは 0 1 2 3 4 5 6 7 8 9 + - * / or =.</li>
+        <li>入力可能なのは 0 1 2 3 4 5 6 7 8 9 + - * / ^ or =.</li>
         <li>
           計算式は{" "}
           <a
