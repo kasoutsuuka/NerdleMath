@@ -322,7 +322,7 @@ const Game: React.FC<{
                 onClick={takeAGuess}
                 className="px-6 py-4 font-black text-white bg-green-500"
               >
-                Guess 🤔
+                実行 🤔
               </button>
 
               <button
@@ -437,7 +437,7 @@ const Game: React.FC<{
                 className="w-24 h-10 font-black text-white bg-slate-800 "
                 onClick={handleButtonInput}
               >
-                Delete 🗑
+                消す 🗑
               </button>
             </div>
           </div>
