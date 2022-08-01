@@ -18,7 +18,7 @@ const Game: React.FC<{
   setShowRules: SetState<boolean>
   setScoreArray: SetState<number[][]>
 }> = ({ setOpen, setShowRules, setScoreArray }) => {
-  const [answers, setAnswers] = useState<string[]>(["1+2+3=6"])
+  const [answers, setAnswers] = useState<string[]>(["9+1-8=2"])
   const [difficultyConfig, setDifficultyConfig] = useState<DifficultyConfig[]>([
     { name: "", color: "", ROWS: 6 },
   ])
@@ -359,7 +359,7 @@ const Game: React.FC<{
                 }}
                 className="px-6 py-4 font-black text-white bg-pink-500"
               >
-                ルール 📖
+                遊び方 📖
               </button>
               <button
                 onClick={() => {
