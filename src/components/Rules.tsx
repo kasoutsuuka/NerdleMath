@@ -78,8 +78,11 @@ export const Rules: React.FC<RulesType> = ({ open }) => {
       </div>
       <div className="text-xs leading-[16px] text-center">
         正解に複数の数字がある場合は黄色で示されます
-      <li>⬜の色を参考にしながら、次の行に数字と記号を入力して新しい数式をつくり“実行”をクリック</li>
+      <ul className="text-xs list-disc">
+      <li>⬜の色を参考にしながら、次の行に数字と記号を入力して
+      <br />新しい数式をつくり“実行”をクリック</li>
       <li>これを繰り返し、一行全部が緑になれば正解、あなたの勝！</li>
+      </ul>  
       　<br /> がんばってね！
       </div>
     </div>
