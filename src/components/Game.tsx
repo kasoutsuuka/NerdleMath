@@ -115,7 +115,7 @@ const Game: React.FC<{
     }
     let col = GameMatrix[guessCount].findIndex(condition)
 
-    if (value === "消し 🗑") {
+    if (value === "削除 🗑") {
       value = ""
       condition = (col: GameSquare) => {
         return col.value !== ""
@@ -414,7 +414,7 @@ const Game: React.FC<{
               </div>
             )}
             <div className="flex gap-2 mt-4">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((num) => {
+              {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => {
                 return (
                   <CustomInputButton
                     value={num.toString()}
@@ -424,7 +424,7 @@ const Game: React.FC<{
               })}
             </div>
             <div className="flex gap-2">
-              {["+", "-", "*", "/", "=", "^"].map((num) => {
+              {["+", "-", "*", "/", "^", "="].map((num) => {
                 return (
                   <CustomInputButton
                     value={num}
@@ -437,7 +437,7 @@ const Game: React.FC<{
                 className="w-24 h-10 font-black text-white bg-slate-800 "
                 onClick={handleButtonInput}
               >
-                消し 🗑
+                削除 🗑
               </button>
             </div>
           </div>
