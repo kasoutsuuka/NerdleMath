@@ -17,23 +17,15 @@ export const Rules: React.FC<RulesType> = ({ open }) => {
         
         Sonoko.study
       </span>
-      <p className="font-bold text-center text-md">ルール</p>
+      <p className="font-bold text-center text-md">遊び方</p>
       <ul className="text-xs list-disc">
-        <li>正しい式を入力してください</li>
-        <li>入力可能なのは 0 1 2 3 4 5 6 7 8 9 + - * / ^ or =.</li>
+        <li>入力可能なのは 0, 1, ,2, 3, 4, 5, 6, 7, 8, 9, +, -, *, /, ^, = の数字と記号</li>
+        <li>隠れている数式を見つけるゲームです</li>
+        <li>初めに一番上の行に数字的に正しい式を入力してください</li>
+        <li>式を入力したら“実行”をクリック</li>
         <li>
-          計算式は{" "}
-          <a
-            className="font-bold text-green-500 underline"
-            href="https://www.jica.go.jp/jica-ri/IFIC_and_JBICI-Studies/jica-ri/publication/archives/jica/kenkyu/95_22/04_03.html" target="_blank"
-          >
-            BODMAS
-          </a>
-          .
-        </li>
-        <li>
-          色違いの説明
-          <br /> 🟩=数字も場所も正解 <br /> 🟨=数字は正しいが場所は違う <br /> ⬛=数字も場所も違う
+          名⬜に色がつきます
+          <br /> 🟩=数字も場所も正解 <br /> 🟨=数字は正しいが場所が違う <br /> ⬛=数字も場所も違う
         </li>
       </ul>
       <div className="flex flex-col gap-2">
@@ -85,8 +77,9 @@ export const Rules: React.FC<RulesType> = ({ open }) => {
         </p>
       </div>
       <div className="text-xs leading-[16px] text-center">
-        正解は複数の数字ある場合は,
-        <br /> 黄色表示されます
+        正解に複数の数字がある場合は黄色で示されます
+      <li>⬜の色を参考にしながら、次の行に数字と記号を入力して新しい数式をつくり“実行”をクリック</li>
+      <li>これを繰り返し、一行全部が緑になれば正解、あなたの勝！</li>
       　<br /> がんばってね！
       </div>
     </div>
