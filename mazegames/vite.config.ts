@@ -7,7 +7,7 @@ process.env.BROWSER = 'chromium';
 export default defineConfig({
     plugins: [sveltekit()],
     css: {
-        postcss: './postcss.config.js',  // Ensure this points to the correct config file
+        postcss: './postcss.config.js',
     },
     define: {
         'import.meta.vitest': 'undefined',
