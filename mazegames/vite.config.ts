@@ -15,7 +15,7 @@ export default defineConfig({
     test: {
         include: ['src/**/*.{test,spec}.{js,ts}', 'src/utils/**/*.{js,ts}'],
     },
-    base: process.env.NODE_ENV === 'production' ? '/mazegames/' : '/',
+    base: '/mazegames/',
     build: {
         outDir: process.env.NODE_ENV === 'production' ? '../react-app/dist/mazegames' : 'dist',
     },

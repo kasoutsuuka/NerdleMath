@@ -6,8 +6,6 @@
       "mazegames"
     ],
     "scripts": {
-      "build": "yarn workspaces run build",
-      "build:react": "yarn workspace nerdle build",
-      "build:svelte": "yarn workspace a-maze build"
+      "build": "yarn workspace nerdle build && yarn workspace a-maze build"
     }
   }
