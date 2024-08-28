@@ -1,0 +1,13 @@
+{
+    "name": "sonoko-study-monorepo",
+    "private": true,
+    "workspaces": [
+      "react-app",
+      "mazegames"
+    ],
+    "scripts": {
+      "build": "yarn workspaces run build",
+      "build:react": "yarn workspace nerdle build",
+      "build:svelte": "yarn workspace a-maze build"
+    }
+  }

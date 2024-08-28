@@ -5,7 +5,6 @@
   "scripts": {
     "build": "vite build",
     "build:react": "vite build", 
-    "build:svelte": "cd ../mazegames && yarn install && vite build",
     "dev": "vite",
     "dev:react": "vite",
     "dev:svelte": "cd ../mazegames && vite"
