@@ -1,5 +1,5 @@
 [build]
-  command = "cd react-app && yarn build && cd ../mazegames && yarn build"
+  command = "cd react-app && yarn install && yarn build && cd ../mazegames && yarn install && yarn build"
   publish = "react-app/dist" # Path to the React app's build output
 
 [[redirects]]
