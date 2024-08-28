@@ -1,22 +1,19 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vitest/config';
+import { fileURLToPath } from 'url';
+import path from 'path';
 
-// Emulated web worker does not work in vite dev on Firefox
-process.env.BROWSER = 'chromium';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default defineConfig({
     plugins: [sveltekit()],
-    css: {
-        postcss: './postcss.config.js',
-    },
-    define: {
-        'import.meta.vitest': 'undefined',
-    },
-    test: {
-        include: ['src/**/*.{test,spec}.{js,ts}', 'src/utils/**/*.{js,ts}'],
-    },
     base: '/mazegames/',
     build: {
-        outDir: process.env.NODE_ENV === 'production' ? '../react-app/dist/mazegames' : 'dist',
+        outDir: path.resolve(__dirname, '../react-app/dist/mazegames'),
+        emptyOutDir: true
     },
+    server: {
+        port: 3001
+    }
 });

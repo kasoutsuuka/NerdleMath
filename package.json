@@ -6,6 +6,12 @@
       "mazegames"
     ],
     "scripts": {
-      "build": "yarn workspace nerdle build && yarn workspace a-maze build"
+      "build": "yarn workspace a-maze svelte-kit sync && yarn workspace nerdle build && yarn workspace a-maze build",
+      "dev:react": "yarn workspace nerdle dev",
+      "dev:svelte": "yarn workspace a-maze dev",
+      "dev": "concurrently \"yarn dev:react\" \"yarn dev:svelte\""
+    },
+    "devDependencies": {
+      "concurrently": "^6.5.1"
     }
   }
