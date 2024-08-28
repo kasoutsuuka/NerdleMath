@@ -1,5 +1,5 @@
 [build]
-  command = "yarn build" # Command to build both React and Svelte apps
+  command = "cd react-app && yarn build && cd ../mazegames && yarn build"
   publish = "react-app/dist" # Path to the React app's build output
 
 [[redirects]]
