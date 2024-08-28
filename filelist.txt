@@ -1,0 +1,9 @@
+.gitignore
+filelist.txt
+mazegames
+netlify.toml
+react-app
+README.md
+yarn.lock
+
+dir /b > filelist.txt

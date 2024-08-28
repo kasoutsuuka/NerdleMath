@@ -3,9 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "yarn build:react && yarn build:svelte",
+    "build:react": "vite build",
+    "build:svelte": "cd mazegames && vite build",
+    "dev": "yarn dev:react",
+    "dev:react": "vite",
+    "dev:svelte": "cd mazegames && vite"
   },
   "dependencies": {
     "axios": "^0.27.2",

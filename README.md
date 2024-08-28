@@ -82,3 +82,20 @@ git push YOUR_REPO_URL BRANCH_NAME
 ---
 
 Made with ❤️ and javascript 💻 by [Ayush Paharia](https://github.com/ayushpaharia)
+
+https://api.jsonbin.io/v3/b/62824f03019db46796a1252a/latest
+https://api.jsonbin.io/v3/b/62db27842c868775a533c832/latest
+
+
+When I switch to darkmode, the logos revert back to One2All.
+6 issues to fix on exclusive content page.
+How to get to exclusive content page?
+
+
+
+How do I change daily equations, limit game to once per day. Hide answers
+Connect my domain name.
+Add ads or links or graphics photos etc.
+leaderboard with social links
+make japanese default language
+

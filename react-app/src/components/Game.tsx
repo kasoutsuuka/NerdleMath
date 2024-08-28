@@ -115,7 +115,7 @@ const Game: React.FC<{
     }
     let col = GameMatrix[guessCount].findIndex(condition)
 
-    if (value === "Delete 🗑") {
+    if (value === "消し 🗑") {
       value = ""
       condition = (col: GameSquare) => {
         return col.value !== ""
@@ -194,7 +194,7 @@ const Game: React.FC<{
     let {
       data: { record },
     } = await axios({
-      url: "https://api.jsonbin.io/v3/b/62824f03019db46796a1252a/latest",
+      url: "https://api.jsonbin.io/v3/b/62dd321b248d43754f021981/latest",
       method: "get",
       headers: {
         "X-Master-Key": masterKey,
@@ -322,7 +322,7 @@ const Game: React.FC<{
                 onClick={takeAGuess}
                 className="px-6 py-4 font-black text-white bg-green-500"
               >
-                Guess 🤔
+                実行 🤔
               </button>
 
               <button
@@ -340,7 +340,7 @@ const Game: React.FC<{
                   // buttonConfig.reset ? "" : "hidden"
                 } px-6 py-4 font-black text-white bg-red-500`}
               >
-                Reset 💀
+                リセット 💀
               </button>
               <button
                 onClick={() => {
@@ -351,7 +351,7 @@ const Game: React.FC<{
                 }}
                 className="px-6 py-4 font-black text-white bg-blue-500"
               >
-                New ✨
+                新ゲーム ✨
               </button>
               <button
                 onClick={() => {
@@ -359,7 +359,7 @@ const Game: React.FC<{
                 }}
                 className="px-6 py-4 font-black text-white bg-pink-500"
               >
-                Modal 🎁
+                ルール 📖
               </button>
               <button
                 onClick={() => {
@@ -437,7 +437,7 @@ const Game: React.FC<{
                 className="w-24 h-10 font-black text-white bg-slate-800 "
                 onClick={handleButtonInput}
               >
-                Delete 🗑
+                消し 🗑
               </button>
             </div>
           </div>

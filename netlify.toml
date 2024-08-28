@@ -1,0 +1,8 @@
+[build]
+  command = "yarn build" # Command to build both React and Svelte apps
+  publish = "react-app/dist" # Path to the React app's build output
+
+[[redirects]]
+  from = "/mazegames/*"
+  to = "/mazegames/index.html"
+  status = 200
