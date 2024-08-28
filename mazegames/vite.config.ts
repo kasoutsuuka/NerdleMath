@@ -5,14 +5,18 @@ import { defineConfig } from 'vitest/config';
 process.env.BROWSER = 'chromium';
 
 export default defineConfig({
-	plugins: [sveltekit()],
-	css: {
-	  postcss: './postcss.config.js',  // Ensure this points to the correct config file
-	},
-	define: {
-	  'import.meta.vitest': 'undefined',
-	},
-	test: {
-	  include: ['src/**/*.{test,spec}.{js,ts}', 'src/utils/**/*.{js,ts}'],
-	},
-  });
+    plugins: [sveltekit()],
+    css: {
+        postcss: './postcss.config.js',  // Ensure this points to the correct config file
+    },
+    define: {
+        'import.meta.vitest': 'undefined',
+    },
+    test: {
+        include: ['src/**/*.{test,spec}.{js,ts}', 'src/utils/**/*.{js,ts}'],
+    },
+    base: process.env.NODE_ENV === 'production' ? '/mazegames/' : '/',
+    build: {
+        outDir: process.env.NODE_ENV === 'production' ? '../react-app/dist/mazegames' : 'dist',
+    },
+});
