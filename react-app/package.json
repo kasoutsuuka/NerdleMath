@@ -3,12 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "build": "yarn build:react && yarn build:svelte",
-    "build:react": "vite build",
-    "build:svelte": "cd mazegames && vite build",
-    "dev": "yarn dev:react",
+    "build": "vite build",
+    "build:react": "vite build", 
+    "build:svelte": "cd ../mazegames && yarn install && vite build",
+    "dev": "vite",
     "dev:react": "vite",
-    "dev:svelte": "cd mazegames && vite"
+    "dev:svelte": "cd ../mazegames && vite"
   },
   "dependencies": {
     "axios": "^0.27.2",
