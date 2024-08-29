@@ -15,5 +15,18 @@ export default defineConfig({
     },
     server: {
         port: 3001
+    },
+    optimizeDeps: {
+        include: ['svelte-gestures']
+    },
+    ssr: {
+        noExternal: ['svelte-gestures']
+    },
+    resolve: {
+        alias: {
+            '$components': path.resolve(__dirname, './src/components'),
+            '$stores': path.resolve(__dirname, './src/stores'),
+            '$types': path.resolve(__dirname, './src/types')
+        }
     }
 });
