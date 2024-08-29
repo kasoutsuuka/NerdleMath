@@ -17,10 +17,10 @@ export default defineConfig({
         port: 3001
     },
     optimizeDeps: {
-        include: ['svelte-gestures']
+        include: ['svelte-gestures', 'qrcode']
     },
     ssr: {
-        noExternal: ['svelte-gestures']
+        noExternal: ['svelte-gestures', 'qrcode']
     },
     resolve: {
         alias: {
